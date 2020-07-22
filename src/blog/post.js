@@ -5,7 +5,8 @@ import Body from './components/body.js';
 import Seo from './seo.js';
 import MetaSeo from '../common/seo';
 import { graphql } from 'gatsby';
-
+import {MDXProvider} from '@mdx-js/react'
+import * as shortcodes from '@blocks/kit'
 
 export default ({location, data }) => {
   const {
@@ -31,12 +32,14 @@ export default ({location, data }) => {
         title={title}
         description={metaDescription} />
       <Hero author={author} date={date} category={category} title={title} />
-      <Body
-        content={content}
-        description={metaDescription}
-        image={data.post.frontmatter.postImage.childImageSharp.original.src}
-        location={location}
-      />
+      <MDXProvider components={shortcodes}>
+        <Body
+          content={content}
+          description={metaDescription}
+          image={data.post.frontmatter.postImage.childImageSharp.original.src}
+          location={location}
+        />
+      </MDXProvider>
     </Layout>
   )
 }
