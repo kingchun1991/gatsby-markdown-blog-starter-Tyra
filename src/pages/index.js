@@ -36,7 +36,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    featuredPost: allMarkdownRemark(
+    featuredPost: allMdx(
       limit: 1,
       sort: {order: DESC, fields: frontmatter___date},
       filter: {frontmatter: {type: {eq: "post"}}}) {
@@ -57,7 +57,7 @@ export const query = graphql`
         }
       }
     }
-    cards: allMarkdownRemark(
+    cards: allMdx(
       skip: 1,
       limit: 3,
       sort: {order: DESC, fields: frontmatter___date},

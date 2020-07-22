@@ -50,7 +50,7 @@ export default class BlogIndex extends React.Component {
 
 export const blogListQuery = graphql`
   query posts($skip: Int!, $limit: Int!) {
-    posts: allMarkdownRemark(
+    posts: allMdx(
       filter: {frontmatter: {type: {eq: "post"}}},
       sort: {fields: frontmatter___date, order: DESC},
       limit: $limit,

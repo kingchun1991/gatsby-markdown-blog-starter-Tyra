@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import 'tachyons'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 
 export default () => (
@@ -16,8 +17,8 @@ export default () => (
               }
             }
           }
-          copy: markdownRemark(frontmatter: {name: {eq: "homepage__bio"}}) {
-            html
+          copy: mdx(frontmatter: {name: {eq: "homepage__bio"}}) {
+            body
             frontmatter {
               title
             }
@@ -29,7 +30,10 @@ export default () => (
           <Img fluid={data.image.childImageSharp.fluid} alt="The Author" className="w-100 mw6" />
           <div class="w-100 pa2 mw6 mv4">
             <span className="db f2 display dark-gray">{data.copy.frontmatter.title}</span>
-            <div className="lh-copy f5 serif mt4" dangerouslySetInnerHTML={{__html: data.copy.html}} />
+            {/* <div className="lh-copy f5 serif mt4" dangerouslySetInnerHTML={{__html: data.copy.html}} /> */}
+            <div className="lh-copy f5 serif mt4">
+              <MDXRenderer>{data.copy.body}</MDXRenderer>
+            </div>
           </div>
         </React.Fragment>
     )} />

@@ -11,7 +11,7 @@ export default props => (
     <StaticQuery
       query={graphql`
         query {
-          allMarkdownRemark(
+          allMdx(
             limit: 2,
             sort: {order: DESC, fields: frontmatter___date},
             filter: {frontmatter: {type: {eq: "post"}}}) {
@@ -34,7 +34,7 @@ export default props => (
           }
         }  
       `}
-      render={data => data.allMarkdownRemark.edges.map(({ node }) => (
+      render={data => data.allMdx.edges.map(({ node }) => (
         <div className="w-100 mw6 tc mb4">
           <Link to={node.frontmatter.slug}>
             <Img

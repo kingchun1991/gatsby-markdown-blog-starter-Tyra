@@ -17,7 +17,7 @@ export default ({location, data }) => {
     slug,
     metaDescription
   } = data.post.frontmatter;
-  const content = data.post.html;
+  const content = data.post.body;
   return (
     <Layout>
       <Seo
@@ -44,8 +44,8 @@ export default ({location, data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    post: markdownRemark(frontmatter: {slug: {eq: $slug}}) {
-      html
+    post: mdx(frontmatter: {slug: {eq: $slug}}) {
+      body
       frontmatter {
         date(formatString: "MMM Do, YYYY")
         dateOriginal: date
@@ -66,7 +66,7 @@ export const query = graphql`
         }
       }
     }
-    date: markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+    date: mdx(frontmatter: {slug: {eq: $slug}}) {
       frontmatter {
         date
       }
