@@ -26,6 +26,7 @@ export default class BlogIndex extends React.Component {
             currentPage={`Page ${this.props.pageContext.pageNumber}`} />
           {posts.map(({node}) => (
             <Preview
+              key={node.id}
               fluidImage={node.frontmatter.postImage.childImageSharp.fluid}
               slug={node.frontmatter.slug}
               title={node.frontmatter.title}
@@ -57,6 +58,7 @@ export const blogListQuery = graphql`
     ) {
       edges {
         node {
+          id
           frontmatter {
             title
             date(formatString: "MMM Do YYYY")
