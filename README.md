@@ -90,6 +90,6 @@ Tyra is licensed under the terms of the MIT License.
 
 # Frank : great blog template
 ## Frank: To-do list
-1. MD to MDX
+1. MD to MDX base on [Migrating Remark to MDX](https://www.gatsbyjs.org/docs/mdx/migrate-remark-to-mdx/)
 2. Table of content
 3. Dark mode
