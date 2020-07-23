@@ -16,7 +16,9 @@ export default props => (
         }
       `}
       render={data => (
-        <Helmet>
+        <Helmet htmlAttributes={{
+          lang: 'en-US',
+        }}>
           <script type="application/ld+json">{`
         {
           "@context": "http://schema.org",
@@ -41,8 +43,7 @@ export default props => (
                 "url": "${data.site.siteMetadata.siteUrl}/logo.png"
               }
             },
-            "description": "${props.description}",
-            "lang: : "en-US"
+            "description": "${props.description}"
         }
       `}</script>
   </Helmet>
