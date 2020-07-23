@@ -7,9 +7,7 @@ import '../styles/custom.tachyons.css';
 
 export default (props) => (
   <React.Fragment>
-    <Helmet htmlAttributes={{
-          lang: 'en-US',
-    }}>
+    <html lang='en-US' />
       <body className="bg-near-white mid-gray" />
     </Helmet>
     <Navbar />
