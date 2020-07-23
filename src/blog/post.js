@@ -34,7 +34,7 @@ export default ({location, data }) => {
         title={title}
         description={metaDescription} />
       <Hero author={author} date={date} category={category} title={title} />
-      {/* <MDXProvider components={shortcodes}> */}
+      <MDXProvider components={shortcodes}>
         <Body
           content={content}
           description={metaDescription}
@@ -42,7 +42,7 @@ export default ({location, data }) => {
           location={location}
           headings={toc}
         />
-      {/* </MDXProvider> */}
+      </MDXProvder>
     </Layout>
   )
 }

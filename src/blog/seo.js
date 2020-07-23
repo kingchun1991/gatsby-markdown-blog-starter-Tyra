@@ -17,6 +17,7 @@ export default props => (
       `}
       render={data => (
         <Helmet>
+          <html lang="en" />
           <script type="application/ld+json">{`
         {
           "@context": "http://schema.org",
