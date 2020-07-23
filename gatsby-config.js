@@ -90,6 +90,7 @@ module.exports = {
       options: {
         gatsbyRemarkPlugins: [
           'gatsby-remark-copy-linked-files',
+          'gatsby-remark-autolink-headers',
           {
             resolve: 'gatsby-remark-images',
             options: {

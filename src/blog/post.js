@@ -18,7 +18,9 @@ export default ({location, data }) => {
     slug,
     metaDescription
   } = data.post.frontmatter;
+
   const content = data.post.body;
+  const toc = data.post.tableOfContents
   return (
     <Layout>
       <Seo
@@ -32,14 +34,15 @@ export default ({location, data }) => {
         title={title}
         description={metaDescription} />
       <Hero author={author} date={date} category={category} title={title} />
-      <MDXProvider components={shortcodes}>
+      {/* <MDXProvider components={shortcodes}> */}
         <Body
           content={content}
           description={metaDescription}
           image={data.post.frontmatter.postImage.childImageSharp.original.src}
           location={location}
+          headings={toc}
         />
-      </MDXProvider>
+      {/* </MDXProvider> */}
     </Layout>
   )
 }
@@ -49,6 +52,7 @@ export const query = graphql`
   query($slug: String!) {
     post: mdx(frontmatter: {slug: {eq: $slug}}) {
       body
+      tableOfContents
       frontmatter {
         date(formatString: "MMM Do, YYYY")
         dateOriginal: date

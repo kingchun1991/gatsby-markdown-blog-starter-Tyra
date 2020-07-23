@@ -17,7 +17,7 @@ export default props => (
       <div
       className="mw8 serif f4 lh-copy center pa2 article__container"
       style={{gridArea: "content"}}>
-        <MDXRenderer>{props.content}</MDXRenderer>
+        <MDXRenderer headings={props.headings}>{props.content}</MDXRenderer>
       </div>
     <Sidebar
       img={props.image}
