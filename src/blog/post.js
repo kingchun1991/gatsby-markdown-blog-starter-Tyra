@@ -42,7 +42,7 @@ export default ({location, data }) => {
           location={location}
           headings={toc}
         />
-      </MDXProvder>
+      </MDXProvider>
     </Layout>
   )
 }
