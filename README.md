@@ -89,7 +89,6 @@ Tyra is licensed under the terms of the MIT License.
 * [Unsplash](https://unsplash.com/) and the Free Photography Community.
 
 # Frank : great blog template
-## Frank: To-do list
+## Frank: udpated
 1. MD to MDX base on [Migrating Remark to MDX](https://www.gatsbyjs.org/docs/mdx/migrate-remark-to-mdx/)
 2. Table of content
-3. Dark mode
