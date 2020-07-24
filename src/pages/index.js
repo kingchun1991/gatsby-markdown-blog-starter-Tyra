@@ -16,14 +16,14 @@ export default ({ data }) => {
         description={data.site.siteMetadata.description} />
       <Hero
         title={post.frontmatter.title}
-        image={post.frontmatter.postImage.childImageSharp.fluid}
+        image={post.frontmatter.featured.childImageSharp.fluid}
         to={post.frontmatter.slug}
         description={post.frontmatter.description} />
       <div className="flex flex-wrap center mw9 justify-around pb3">
         {data.cards.edges.map(({node}) => (
           <Card
             title={node.frontmatter.title}
-            image={node.frontmatter.postImage.childImageSharp.fluid}
+            image={node.frontmatter.featured.childImageSharp.fluid}
             to={node.frontmatter.slug}
             description={node.frontmatter.description} />
         ))}
@@ -46,7 +46,7 @@ export const query = graphql`
             title
             description: metaDescription
             slug
-            postImage {
+            featured {
               childImageSharp {
                 fluid(maxWidth: 1920) {
                   ...GatsbyImageSharpFluid
@@ -68,7 +68,7 @@ export const query = graphql`
             title
             description: metaDescription
             slug
-            postImage {
+            featured {
               childImageSharp {
                 fluid(maxWidth: 1920) {
                   ...GatsbyImageSharpFluid

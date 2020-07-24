@@ -8,7 +8,6 @@ import '../styles/custom.tachyons.css';
 export default (props) => (
   <React.Fragment>
     <Helmet>
-    <html lang='en-US' />
       <body className="bg-near-white mid-gray" />
     </Helmet>
     <Navbar />

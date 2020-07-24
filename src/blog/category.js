@@ -27,7 +27,7 @@ export default class BlogIndex extends React.Component {
           {posts.map(({node}) => (
             <Preview
               key={node.id}
-              fluidImage={node.frontmatter.postImage.childImageSharp.fluid}
+              fluidImage={node.frontmatter.featured.childImageSharp.fluid}
               slug={node.frontmatter.slug}
               title={node.frontmatter.title}
               date={node.frontmatter.date}
@@ -65,7 +65,7 @@ export const blogListQuery = graphql`
             category
             metaDescription
             slug
-            postImage {
+            featured {
               childImageSharp {
                 fluid(maxWidth: 1080, maxHeight: 512) {
                   ...GatsbyImageSharpFluid

@@ -21,7 +21,7 @@ export default props => (
                   title
                   slug
                   metaDescription
-                  postImage {
+                  featured {
                     childImageSharp {
                       fluid(maxWidth: 720) {
                         ...GatsbyImageSharpFluid
@@ -39,7 +39,7 @@ export default props => (
           <Link to={node.frontmatter.slug}>
             <Img
               className="h5"
-              fluid={node.frontmatter.postImage.childImageSharp.fluid}
+              fluid={node.frontmatter.featured.childImageSharp.fluid}
               alt={node.frontmatter.metaDescription} />
           </Link>
           <Link

@@ -29,16 +29,17 @@ export default ({location, data }) => {
         date={dateOriginal}
         description={metaDescription}
         author={author}
-        image={data.post.frontmatter.postImage.childImageSharp.original.src} />
+        image={data.post.frontmatter.featured.childImageSharp.original.src} />
       <MetaSeo
         title={title}
-        description={metaDescription} />
+        description={metaDescription}
+        image={data.post.frontmatter.featured.childImageSharp.resize} />
       <Hero author={author} date={date} category={category} title={title} />
       <MDXProvider components={shortcodes}>
         <Body
           content={content}
           description={metaDescription}
-          image={data.post.frontmatter.postImage.childImageSharp.original.src}
+          image={data.post.frontmatter.featured.childImageSharp.original.src}
           location={location}
           headings={toc}
         />
@@ -61,13 +62,18 @@ export const query = graphql`
         title
         metaDescription
         slug
-        postImage {
+        featured {
           childImageSharp {
             original {
               src
             }
             fluid(maxWidth: 1080) {
               ...GatsbyImageSharpFluid
+            }
+            resize(width: 1200) {
+              src
+              height
+              width
             }
           }
         }
